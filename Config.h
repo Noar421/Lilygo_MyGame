@@ -20,4 +20,6 @@
 #define IWIDTH 240
 #define IHEIGHT 135
 
+#define TILESIZE 8
+#define PLAYER_SPEED 8
 #endif
