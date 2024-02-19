@@ -3,7 +3,7 @@ Level::Level() {
 }
 void Level::setup() {
 }
-void Level::draw(TFT_eSprite img) {
+void Level::draw(TFT_eSprite &img) {
   for (int i; i < 16; i++) {
     for (int j; j < 30; j++) {
       switch (tileMap[i][j]) {
@@ -15,4 +15,7 @@ void Level::draw(TFT_eSprite img) {
       }
     }
   }
+}
+void Level::update(TFT_eSprite &img) {
+  Level::draw(img);
 }

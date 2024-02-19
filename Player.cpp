@@ -5,16 +5,16 @@ void Player::setup(int _x, int _y) {
   x = _x;
   y = _y;
 }
-void Player::draw(TFT_eSprite img) {
+void Player::draw(TFT_eSprite &img) {
   img.fillRect(x, y, TILESIZE, TILESIZE, TFT_RED);
 }
 
 void Player::move(int dx, int dy, uint dt) {
-  x += (int)(dx * (dt/1000) * PLAYER_SPEED);
-  y += (int)(dy * (dt/1000) * PLAYER_SPEED);
+  x += (int)(dx * (dt / 1000) * PLAYER_SPEED);
+  y += (int)(dy * (dt / 1000) * PLAYER_SPEED);
 }
 
-void Player::update(int dx, int dy, TFT_eSprite img, uint dt) {
-  move(dx, dy, dt);
-  draw(img);
+void Player::update(int dx, int dy, TFT_eSprite &img, uint dt) {
+  Player::move(dx, dy, dt);
+  Player::draw(img);
 }

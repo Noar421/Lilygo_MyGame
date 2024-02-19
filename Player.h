@@ -6,15 +6,15 @@ class Player {
 public:
   Player();
   void setup(int x, int y);
-  void move(int dx, int dy, uint dt);
-  void draw(TFT_eSprite img);
-  void update(int dx, int dy, TFT_eSprite img, uint dt);
+  void update(int dx, int dy, TFT_eSprite &img, uint dt);
 
 private:
   int x;
   int y;
   int dx = 0;
   int dy = 0;
+  void move(int dx, int dy, uint dt);
+  void draw(TFT_eSprite &img);
 };
 
 #endif

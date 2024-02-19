@@ -68,6 +68,16 @@ void loop() {
   if (button2) {
     dx -= 1;
   }
-  level.draw(img);
+
+  img.createSprite(IWIDTH, IHEIGHT);
+  img.fillSprite(TFT_BLACK);
+
+  level.update(img);
   player.update(dx, 0, img, dt);
+
+  // Push the screen buffer
+  img.pushSprite(0, 0);
+
+  // Delete sprite to free up the memory
+  img.deleteSprite();
 }
